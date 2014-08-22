@@ -11,7 +11,8 @@
     "modernizr": "~2.8.2",
     "qunit": "~1.14.0",
     "mousetrap": "~1.4.6",
-    "phaser": "~2.0.7"
+    "phaser": "~2.0.7",
+    "stats.js": "*"
   },
   "resolutions": {
     "ember": "~1.6.1"

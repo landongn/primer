@@ -5,12 +5,8 @@
 
 var redis = require('redis');
 var Emitter = require('events').EventEmitter;
-var config = require('../../conf')();
 var util = require('util');
 var Bot = require('./bot.js');
-var email = require('nodemailer');
-
-email.SMTP = config.smtp;
 
 
 function Spy(engine) {
@@ -38,7 +34,7 @@ Spy.prototype.load = function () {
 		self.update();
 	}, 15000);
 
-	this.client = redis.createClient(config.redis.port, config.redis.host);
+	this.client = redis.createClient();
 
 	this.client.hdel(this.servers, self.engine.server_name);
 

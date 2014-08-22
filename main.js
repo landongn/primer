@@ -1,3 +1,4 @@
+var app = require('express')();
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -8,29 +9,18 @@ var bodyParser = require('body-parser');
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 var debug = require('debug')('LoRD');
-var app = express();
+
+var multipla = require('./server/multi');
+
+
+
+app.set('port', process.env.PORT || 3000);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '/server/views'));
 app.set('view engine', 'jade');
 
-
-// configure the database orm
-var knex = require('knex')({
-	client: "pg",
-	connection: {
-		host: '127.0.0.1',
-		user: 'lord',
-		password: 'lets fuck violet okay fellas?',
-		database: 'lord_dev',
-		charset: 'utf8'
-	}
-});
-
-var bookshelf = require('bookshelf')(knex);
-// set up a global application reference to bookshelf.
-
-app.set('bookshelf', bookshelf);
 
 
 app.use(favicon());
@@ -76,8 +66,9 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
+
+var io = require('socket.io')(server);

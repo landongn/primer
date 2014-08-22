@@ -4,7 +4,6 @@
 //######################
 
 var Emitter = require('events').EventEmitter;
-var config = require('../../conf')();
 var util = require('util');
 var GRID = 100;
 function Bot(spy) {

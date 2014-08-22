@@ -8,14 +8,10 @@ var os = require('os');
 
 //#####################
 
-var webserver = require('http').createServer(handler);
 var Client = require('./client.js');
 var Spy = require('./spy.js');
 
-var io = require('socket.io').listen(webserver);
-io.enable('browser client minification'); // send minified client
-io.enable('browser client etag'); // apply etag caching logic based on version number
-io.set('log level', 1);
+
 
 //######################
 //## Engine is used to handle the multiple clients per single subscription to a redis channel.
