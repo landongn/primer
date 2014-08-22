@@ -2,7 +2,10 @@
   "name": "app",
   "private": true,
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "redis": "^0.12.1",
+    "socket.io": "^1.0.6"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-autoprefixer": "~0.7.4",
