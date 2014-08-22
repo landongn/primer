@@ -13,7 +13,6 @@ var debug = require('debug')('LoRD');
 var multipla = require('./server/multi');
 
 
-
 app.set('port', process.env.PORT || 3000);
 
 
@@ -72,3 +71,8 @@ var server = app.listen(app.get('port'), function() {
 });
 
 var io = require('socket.io')(server);
+
+
+io.on('connection', function (client) {
+    console.log('client connected.');
+});

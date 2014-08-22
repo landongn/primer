@@ -8,6 +8,12 @@ App.ApplicationRoute = Ember.Route.extend({
 
 	},
 
+	actions: {
+		connectSocket: function () {
+			var socket = io.connect();
+		}
+	},
+
 	renderTemplate: function () {
 		this.render();
 
@@ -20,5 +26,7 @@ App.ApplicationRoute = Ember.Route.extend({
 			into: 'application',
 			outlet: 'menu'
 		});
+
+		
 	}
 });

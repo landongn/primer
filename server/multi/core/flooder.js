@@ -34,13 +34,7 @@ function Test() {
 		return;
 	}
 
-	setInterval(function () {
-        if (channel) {
-    		var touch = Math.floor(Math.random() * 400);
-	    	socket.emit('add_track', {index: touch, session_id: session_id, username: username, channel: channel});
-            //console.log(session_id+channel+touch);
-        }
-	}, Math.floor(Math.random() * (config.activityRange[1] - (config.activityRange[1]) + 1)) + config.activityRange[1]);
+	
 	//######################
 	//## server will respond to a new connection with the 'ident' message
 	//######################
