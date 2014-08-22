@@ -10,7 +10,8 @@
     "ember-model": "~0.0.11",
     "modernizr": "~2.8.2",
     "qunit": "~1.14.0",
-    "mousetrap": "~1.4.6"
+    "mousetrap": "~1.4.6",
+    "phaser": "~2.0.7"
   },
   "resolutions": {
     "ember": "~1.6.1"
