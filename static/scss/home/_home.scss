@@ -1,9 +1,6 @@
-html {
-	background: $darkgray;
-	font-family: $monospace;
-}
 html, body.home {
-	background-color: $darkgray;
+	@include munro;
+	background: black;
 	color: $green;
 	position:relative;
 

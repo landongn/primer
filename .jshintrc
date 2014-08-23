@@ -48,11 +48,14 @@
     "globals": {
         "App" : true,
         "jQuery": true,
+        "Stats": true,
         "$": true,
+        "io": true,
         "Ember": true,
         "Em": true,
         "Mousetrap": true,
         "Handlebars": true,
-        "require": true
+        "require": true,
+        "Phaser": true
     }
 }
