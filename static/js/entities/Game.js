@@ -20,10 +20,14 @@ App.Game = Ember.Object.extend({
 			Phaser.AUTO,
 			'into'
 		);
+	},
 
-		
+	statsStart: function () {
+		this.stats.begin();
+	},
 
-
+	statsEnd: function () {
+		this.stats.end();
 	}
 }).create();
 
